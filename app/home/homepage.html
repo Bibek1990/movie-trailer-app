@@ -1,6 +1,8 @@
 <div class="container" align="center" ng-repeat="movie in movies">
     <h3>Title</h3>
     <label>{{movie.title}}</label>
+    <h4>Id</h4>
+    <label>{{movie._id}}</label>
     <br/>
     <a class="button" href="movie/{{movie._id}}">Watch now</a>
 </div>

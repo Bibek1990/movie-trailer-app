@@ -12,6 +12,7 @@ angular.module('myApp')
         retrieveMovie();
 
         function retrieveMovie() {
+
             MovieService.all()
                 .then(function (greeting) {
                     $scope.movies = greeting.data;
