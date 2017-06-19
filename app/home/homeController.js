@@ -8,7 +8,7 @@ angular.module('myApp')
     .controller('HomeCtrl', function ($rootScope, $scope, $location, MovieService) {
         $scope.movies = [];
         $scope.errors = [];
-        $scope.youtubeTestUrl = "https://www.youtube.com/watch?v=VSB4wGIdDwo";
+        $scope.youtubeTestUrl = "https://www.youtube.com/watch?v=gKR7O5B9qqg";
 
         retrieveMovie();
 
