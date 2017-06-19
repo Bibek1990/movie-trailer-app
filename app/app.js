@@ -2,7 +2,7 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
-  'ngRoute'
+  'ngRoute', 'youtube-embed'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
 
