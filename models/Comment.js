@@ -1,34 +1,34 @@
 /**
- * Created by avipokhrel on 6/16/17.
+ * Created by avipokhrel on 6/20/17.
  */
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 // Create the TrailerSchema.
-var TrailerSchema = new mongoose.Schema({
+var CommentSchema = new Schema({
+    user: {
+        type: String,
+        required: false
+    },
     title: {
         type: String,
         required: false
     },
-    author: {
-        type: String,
-        required: false
-    },
-    url: {
-        type: String,
+    rating: {
+        type: Number,
         required: false
     },
     publishedOn: {
         type: Date,
         'default': Date.now
     },
-    description: {
+    comments: {
         type: String,
         required: false
     },
-    comments : [{ type: mongoose.Schema.Types.ObjectId, ref: 'comment' }]
+    trailer: {type: Schema.Types.ObjectId, ref: 'trailer', required: true},
 
 });
 
 // Export the model.
-module.exports = mongoose.model('trailer', TrailerSchema);
-
+module.exports = mongoose.model('comment', CommentSchema);

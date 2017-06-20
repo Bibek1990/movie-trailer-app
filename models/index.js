@@ -1,3 +1,4 @@
 module.exports = {
-    trailer: require('./Trailer')
+    trailer: require('./Trailer'),
+    comment: require('./Comment')
 };
