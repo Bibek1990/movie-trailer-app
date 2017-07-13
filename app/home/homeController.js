@@ -5,8 +5,8 @@
 
 angular.module('myApp')
 
-    .controller('HomeCtrl', function ($rootScope, $scope, $location, MovieService) {
-        $scope.movies = [];
+    .controller('HomeCtrl', function ($rootScope, $scope, $location, TrailerService) {
+        $scope.trailers = [];
         $scope.errors = [];
         $scope.youtubeTestUrl = "https://www.youtube.com/watch?v=gKR7O5B9qqg";
 
@@ -14,9 +14,9 @@ angular.module('myApp')
 
         function retrieveMovie() {
 
-            MovieService.all()
+            TrailerService.all()
                 .then(function (greeting) {
-                    $scope.movies = greeting.data;
+                    $scope.trailers = greeting.data;
                 }, function (reason) {
                     $scope.errors.push(reason.data.toString());
                 });

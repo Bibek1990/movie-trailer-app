@@ -1,0 +1,63 @@
+<div class="container">
+    <h3>Title: {{trailer.title}}</h3>
+    <youtube-video video-url="trailer.url"></youtube-video>
+    <br/>
+    <p><label><b>Author: </b></label> {{trailer.author}}</p>
+    <p><label><b>Published Date: </b></label> {{trailer.publishedOn}}</p>
+    <p><label><b>Description: </b></label> {{trailer.description}}</p>
+
+    <br/>
+    <h4>Comments:</h4>
+    <button ng-click="ShowHide()">Add Review</button>
+
+    <div ng-show="IsVisible">
+        <h2 align="center">Add Comment form</h2>
+        <form name="myForm" class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="title">Title:</label>
+                <div class="col-sm-10">
+                    <input type="text" ng-model="comment.title" class="form-control" id="title"
+                           placeholder="Enter title" name="email" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="user">User:</label>
+                <div class="col-sm-10">
+                    <input type="text" ng-model="comment.user" class="form-control" id="user"
+                           placeholder="Enter User" name="pwd" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="user">Rating:</label>
+                <div class="col-sm-10">
+                    <input type="number" ng-model="comment.rating" class="form-control" id="rating"
+                           placeholder="Enter rating" name="pwd" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="comment">Comment:</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" ng-model="comment.comments" placeholder="Enter comment"
+                              id="comment" rows="3" required></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button ng-click="addComments(trailer._id)" ng-disabled="myForm.$invalid" class="btn btn-default">Save
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <div ng-repeat="comment in trailer.comments">
+        <p>===========================================================================</p>
+        <h5>Title: {{comment.title}}</h5>
+        <label><b>User: </b></label> {{comment.user}} <label><b> Published Date: </b></label> {{comment.publishedOn}}
+        <br/>
+        <label><b>Description: </b></label> {{comment.comments}}
+    </div>
+
+</div>

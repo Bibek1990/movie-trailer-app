@@ -1,11 +1,12 @@
 
-<youtube-video video-url="youtubeTestUrl"></youtube-video>
 
-<div class="container" align="center" ng-repeat="movie in movies">
-    <h3>Title</h3>
-    <label>{{movie.title}}</label>
-    <h4>Id</h4>
-    <label>{{movie._id}}</label>
+<div class="container" align="center" ng-repeat="movie in trailers">
+    <h3>Title: <a href="#/trailer/{{movie._id}}">{{movie.title}}</a></h3>
+    <youtube-video video-url="movie.url"></youtube-video>
     <br/>
-    <a class="button" href="movie/{{movie._id}}">Watch now</a>
+    <label><b>Author: </b>{{movie.author}}</label>
+    <br/>
+    <label><b>Published Date: </b>{{movie.publishedOn}}</label>
+    <br/>
+    <label><b>Description: </b>{{movie.description}}</label>
 </div>

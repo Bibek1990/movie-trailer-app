@@ -23,6 +23,14 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
           templateUrl: 'home/homepage.html',
           controller: 'HomeCtrl'
       })
+      .when('/addTrailer', {
+          templateUrl: 'addtrailer/add-trailer.html',
+          controller: 'AddTrailerCtrl'
+      })
+      .when('/trailer/:id', {
+          templateUrl: 'trailerView/trailer-view.html',
+          controller: 'TrailerViewCtrl'
+      })
 
       .otherwise({redirectTo: '/home'});
 }]);

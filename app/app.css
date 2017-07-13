@@ -23,5 +23,18 @@
     content: "|";
     padding-right: 0.3em;
 }
+.wrapper {
+    border: 1px dashed #95a5a6;
+    height: 56px;
+    margin-top: 16px;
+    border-radius: 4px;
+    position: relative;
+    font-size: 12px;
+}
+
+.wrapper p {
+    line-height: 31px;
+}
+
 
 
